@@ -41,6 +41,10 @@ android {
 
 dependencies {
 
+    // navigation
+    implementation(libs.androidx.navigation.ui)  // Depende de navigation-fragment
+    implementation(libs.androidx.navigation.fragment) // Depende de navigation-ui
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
