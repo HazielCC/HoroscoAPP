@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -30,16 +32,23 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    // Kotlin options
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "11" // Set the JVM target for Kotlin code
     }
 
+    // Enable view binding
     buildFeatures {
         viewBinding = true
     }
 }
 
 dependencies {
+    // DaggerHilt
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+
 
     // navigation
     implementation(libs.androidx.navigation.ui)  // Depende de navigation-fragment
