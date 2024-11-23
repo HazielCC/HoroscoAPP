@@ -10,7 +10,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.horoscoapp.databinding.FragmentHoroscopeBinding
+import com.example.horoscoapp.ui.horoscope.adapter.HoroscopeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -23,7 +25,9 @@ class HoroscopeFragment : Fragment() {
     private var _binding: FragmentHoroscopeBinding? = null
     private val binding get() = _binding!!
 
-    // Método para crear la vista del fragmento
+    private lateinit var horoscopeAdapter: HoroscopeAdapter
+
+    // Metodo para crear la vista del fragmento
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,7 +37,7 @@ class HoroscopeFragment : Fragment() {
         return binding.root
     }
 
-    // Método llamado cuando la vista ha sido creada
+    // Metodo llamado cuando la vista ha sido creada
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initUI() // Inicializa la interfaz de usuario
@@ -42,6 +46,7 @@ class HoroscopeFragment : Fragment() {
     // Inicializa la interfaz de usuario
     private fun initUI() {
         initUIState() // Inicializa el estado de la interfaz de usuario
+        initRecycleView()
     }
 
     // Inicializa el estado de la interfaz de usuario
@@ -51,12 +56,22 @@ class HoroscopeFragment : Fragment() {
                 // Recoge los datos del ViewModel y los registra en el log
                 horoscopeViewModel.horoscope.collect {
                     Log.d("Hola", it.toString())
+                    horoscopeAdapter.updateList(it)
                 }
             }
         }
     }
 
-    // Método llamado cuando la vista es destruida
+    //
+    private fun initRecycleView() {
+        horoscopeAdapter = HoroscopeAdapter()
+        binding.rvHoroscope.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = horoscopeAdapter
+        }
+    }
+
+    // Metodo llamado cuando la vista es destruida
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null // Libera el enlace de vista
