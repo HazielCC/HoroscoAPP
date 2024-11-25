@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.horoscoapp.databinding.FragmentHoroscopeBinding
 import com.example.horoscoapp.ui.horoscope.adapter.HoroscopeAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -55,7 +55,6 @@ class HoroscopeFragment : Fragment() {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 // Recoge los datos del ViewModel y los registra en el log
                 horoscopeViewModel.horoscope.collect {
-                    Log.d("Hola", it.toString())
                     horoscopeAdapter.updateList(it)
                 }
             }
@@ -64,9 +63,11 @@ class HoroscopeFragment : Fragment() {
 
     //
     private fun initRecycleView() {
-        horoscopeAdapter = HoroscopeAdapter()
+        horoscopeAdapter =
+            HoroscopeAdapter(onItemSelected = { Log.d("Hola", getString(it.name)) })
         binding.rvHoroscope.apply {
-            layoutManager = LinearLayoutManager(context)
+            // layoutManager = LinearLayoutManager(context) // Establece el diseño de la lista
+            layoutManager = GridLayoutManager(context, 2)
             adapter = horoscopeAdapter
         }
     }
