@@ -4,5 +4,6 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     // Apply Hilts plugin
     id("com.google.dagger.hilt.android") version "2.51.1" apply false
-
+    // Library for safe navigation
+    id("androidx.navigation.safeargs.kotlin") version "2.8.4" apply false
 }

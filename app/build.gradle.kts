@@ -1,8 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("kotlin-kapt")
-    id("com.google.dagger.hilt.android")
+    id("kotlin-kapt") // Kotlin annotation processing
+    id("com.google.dagger.hilt.android") // DaggerHilt
+    id("androidx.navigation.safeargs.kotlin") // Navigation Safe Args
 }
 
 android {

@@ -23,5 +23,8 @@
     <string name="capricorn">Capricorn</string>
     <string name="aquarius">Aquarius</string>
     <string name="pisces">Pisces</string>
+
+    <!-- Ejemplos de Textos -->
     <string name="example">I am an example</string>
+    <string name="long_example">I am a longest example, i try to make the difference in the world</string>
 </resources>
