@@ -1,4 +1,4 @@
-package com.example.horoscoapp.ui.deteail
+package com.example.horoscoapp.ui.detail
 
 sealed class HoroscopeDetailState {
     data object Loading : HoroscopeDetailState()

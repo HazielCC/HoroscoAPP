@@ -5,10 +5,20 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary"
+    android:background="@color/colorPrimary"
 
-    tools:context=".ui.deteail.HoroscopeDetailActivity">
+    tools:context=".ui.detail.HoroscopeDetailActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+
+        android:padding="15dp"
+        app:tint="@color/colorOnPrimary"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ivback"
@@ -30,7 +40,8 @@
         android:layout_height="wrap_content"
         tools:text="@string/example"
 
-        style="@style/MyTextViewTitle"
+        style="@style/MyTitleTextView"
+
 
         app:layout_constraintTop_toBottomOf="@id/ivback"
         app:layout_constraintStart_toStartOf="parent"

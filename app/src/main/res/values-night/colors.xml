@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="background">#D2D6E2</color> <!--Color de fondo de la ventana -->
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="primary">#3F51B5</color>
-    <color name="primary_dark">#303F9F</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryVariant">#303F9F</color>
+    <color name="colorOnPrimary">#FF4081</color>
+
+
     <color name="secondary">#FF4081</color>
     <color name="secondary_dark">#C51162</color>
+
     <color name="text_color">#FFFFFF</color>
     <color name="text_color_dark">#000000</color>
 
@@ -16,5 +22,19 @@
     <color name="silver">#c0c0c0</color>
     <color name="black_alpha">#98000000</color>
 
-    <color name="red">#FF0000</color>
+    <!-- Colores para los botones -->
+    <color name="btnDisabled">#737373</color>
+    <color name="blue">#2f8cb2</color>
+    <color name="blueTransparent">#f4f8fe</color>
+
+    <color name="red">#dd3a2b</color>
+    <color name="redTransparent">#fef4f2</color>
+
+    <color name="green">#2eaa81</color>
+    <color name="greenTransparent">#f6fff9</color>
+
+    <color name="yellow">#fd9b04</color>
+    <color name="yellowTransparent">#f3ede3</color>
+
+    <color name="btnClick">#7C3BE1</color>
 </resources>

@@ -27,4 +27,40 @@
     <!-- Ejemplos de Textos -->
     <string name="example">I am an example</string>
     <string name="long_example">I am a longest example, i try to make the difference in the world</string>
+    <string name="short_example">I am a short example</string>
+
+
+    <!-- ****************** Utilities ****************** -->
+    <string name="titulo">Titulo</string>
+    <string name="advertencia">Advertencia</string>
+    <string name="exito">Éxito</string>
+    <string name="informacion">Información</string>
+    <string name="error_servicio">Error en el servicio</string>
+    <string name="parece_que_no_tienes_internet">Parece que no tienes Internet</string>
+
+
+    <!-- Mensaje emergente -->
+    <string name="error_internet">No tienes conexión a Internet</string>
+
+    <!-- Botones -->
+    <string name="reintentar">Reintentar</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="volver">Volver</string>
+    <string name="continuar">Continuar</string>
+    <string name="error">error</string>
+
+    <!-- ALTS  -->
+    <string name="icon_toastmessage">Icon Toast Message</string>
+
+    <string name="valor_de_lista">Valor de Lista</string>
+    <string name="bot_n">Botón</string>
+    <string name="ingresa_tu_nombre">ingresa_tu_nombre</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
+    <string name="calcular_masa_corporal">Calcular Masa Corporal</string>
+    <string name="resultado">Resultado</string>
+    <string name="volver_a_calcular">Volver a Calcular</string>
+    <string name="save">Guardar</string>
 </resources>

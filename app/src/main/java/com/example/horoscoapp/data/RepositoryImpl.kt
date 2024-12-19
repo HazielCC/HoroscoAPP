@@ -1,4 +1,9 @@
 package com.example.horoscoapp.data
 
-interface RepositoryImpl {
+import com.example.horoscoapp.domain.Repository
+
+class RepositoryImpl : Repository {
+    override suspend fun getHoroscope(sign: String): String {
+        TODO("Not yet implemented")
+    }
 }

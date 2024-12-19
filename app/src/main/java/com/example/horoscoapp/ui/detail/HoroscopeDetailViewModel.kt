@@ -1,4 +1,4 @@
-package com.example.horoscoapp.ui.deteail
+package com.example.horoscoapp.ui.detail
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

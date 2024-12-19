@@ -1,4 +1,4 @@
-package com.example.horoscoapp.ui.deteail
+package com.example.horoscoapp.ui.detail
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
