@@ -6,11 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import com.example.horoscoapp.R
 import com.example.horoscoapp.databinding.DialogMessageBinding
-import com.example.horoscoapp.utilities.services.API.isNetworkAvailable
+import com.example.horoscoapp.utilities.services.NetworkIdentity
+import javax.inject.Inject
 
-class MessageDialog {
+class MessageDialog @Inject constructor(
+    private var dialog: AlertDialog,
+    private var networkIdentity: NetworkIdentity
+) {
     private lateinit var binding: DialogMessageBinding
-    private var dialog: AlertDialog? = null
 
     companion object {
         const val TYPE_ERROR = "error"
@@ -21,25 +24,25 @@ class MessageDialog {
     }
 
     private fun show(context: Context, message: String, type: String) {
-        if (dialog?.isShowing == true) return
+        if (dialog.isShowing) return
 
         val builder = AlertDialog.Builder(context)
         val inflater = LayoutInflater.from(context)
         binding = DialogMessageBinding.inflate(inflater)
         builder.setView(binding.root)
         dialog = builder.create()
-        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
-        dialog?.show()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.show()
 
         binding.tvText.text = message
         configureDialog(context, type)
-        binding.btnClose.setOnClickListener { dialog?.dismiss() }
+        binding.btnClose.setOnClickListener { dialog.dismiss() }
     }
 
     private fun configureDialog(context: Context, type: String) {
         when (type) {
             TYPE_ERROR -> {
-                dialog?.setCancelable(false)
+                dialog.setCancelable(false)
                 binding.tvTitle.text = context.getString(R.string.error)
                 binding.tvTitle.setTextColor(context.getColor(R.color.red))
                 binding.ivIcon.setImageResource(R.drawable.ic_error)
@@ -64,17 +67,17 @@ class MessageDialog {
             }
 
             TYPE_ERROR_INTERNET -> {
-                dialog?.setCancelable(false)
+                dialog.setCancelable(false)
                 binding.tvTitle.text = context.getString(R.string.error_servicio)
                 binding.tvTitle.setTextColor(context.getColor(R.color.red))
                 binding.ivIcon.setImageResource(R.drawable.ic_error)
                 binding.btnClose.visibility = View.GONE
                 binding.btnAction.text = context.getString(R.string.reintentar)
                 binding.btnAction.setOnClickListener {
-                    if (context.isNetworkAvailable()) {
-                        dialog?.dismiss()
+                    if (networkIdentity.isNetworkAvailable()) {
+                        dialog.dismiss()
                     } else {
-                        dialog?.dismiss()
+                        dialog.dismiss()
                         show(
                             context,
                             context.getString(R.string.error_internet),
@@ -130,7 +133,7 @@ class MessageDialog {
 
         binding.btnAction.setOnClickListener {
             action()
-            dialog?.dismiss()
+            dialog.dismiss()
         }
     }
 

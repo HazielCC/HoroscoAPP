@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import com.example.horoscoapp.databinding.DialogLoadingBinding
 
 class LoadingDialog {
-
     private var dialog: AlertDialog? = null
     private lateinit var binding: DialogLoadingBinding
 
