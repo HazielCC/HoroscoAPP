@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.horoscoapp"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -21,12 +21,21 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
+            isDebuggable = false
             isMinifyEnabled = false
+            resValue("string", "coconame", "coco")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
+        }
+        getByName("debug") {
+            resValue("string", "coconame", "[DBUG] coco")
+
+            isDebuggable = true
+            buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
         }
     }
     compileOptions {
@@ -42,6 +51,7 @@ android {
     // Enable view binding
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -50,6 +60,12 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
+
+    implementation("com.orhanobut:logger:2.2.0")
 
     // navigation
     implementation(libs.androidx.navigation.ui)  // Depende de navigation-fragment

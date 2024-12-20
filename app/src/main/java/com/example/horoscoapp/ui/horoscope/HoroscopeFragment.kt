@@ -1,7 +1,6 @@
 package com.example.horoscoapp.ui.horoscope
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -94,7 +93,6 @@ class HoroscopeFragment : Fragment() {
                 Virgo -> HoroscopeModel.VIRGO
 
             }
-            Log.d("Hola", getString(it.name))
             findNavController().navigate(
                 HoroscopeFragmentDirections.actionHoroscopeFragmentToHoroscopeDetailActivity(type)
             )

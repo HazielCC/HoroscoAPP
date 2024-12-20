@@ -5,23 +5,24 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
+
     tools:context=".ui.home.MainActivity">
 
     <FrameLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/primary_dark"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/MyTextViewTitle"
-            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/MyTitleTextView"
+            android:gravity="center"
             android:text="@string/app_name" />
     </FrameLayout>
 
@@ -39,11 +40,21 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView" />
 
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorOnPrimary"
+
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_host_fragment" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary_dark"
+        android:background="@color/background"
 
         app:itemIconTint="@color/bottom_nav_selector"
         app:itemTextColor="@color/bottom_nav_selector"

@@ -5,24 +5,45 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary"
+    android:background="@color/background"
 
-    tools:context=".ui.deteail.HoroscopeDetailActivity">
+    tools:context=".ui.detail.HoroscopeDetailActivity">
 
-
-    <ImageView
-        android:id="@+id/ivback"
-        android:layout_width="match_parent"
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxHeight="300dp"
-        android:maxWidth="300dp"
-
-        android:layout_margin="16dp"
-        tools:src="@tools:sample/avatars"
+        android:indeterminateTint="@color/colorOnPrimary"
+        android:visibility="gone"
 
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+
+        android:padding="15dp"
+        app:tint="@color/colorOnPrimary"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSing"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+
+        tools:src="@tools:sample/avatars"
+
+        app:layout_constraintTop_toBottomOf="@+id/ivBack"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvTitle" />
 
     <TextView
         android:id="@+id/tvTitle"
@@ -30,9 +51,10 @@
         android:layout_height="wrap_content"
         tools:text="@string/example"
 
-        style="@style/MyTextViewTitle"
+        style="@style/MyTitleTextView"
+        android:padding="10dp"
 
-        app:layout_constraintTop_toBottomOf="@id/ivback"
+        app:layout_constraintTop_toBottomOf="@id/ivSing"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
