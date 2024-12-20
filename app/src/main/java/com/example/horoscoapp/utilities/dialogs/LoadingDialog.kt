@@ -4,8 +4,9 @@ import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import com.example.horoscoapp.databinding.DialogLoadingBinding
+import javax.inject.Inject
 
-class LoadingDialog {
+class LoadingDialog @Inject constructor() {
     private var dialog: AlertDialog? = null
     private lateinit var binding: DialogLoadingBinding
 

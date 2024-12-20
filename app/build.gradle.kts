@@ -21,12 +21,21 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
+            isDebuggable = false
             isMinifyEnabled = false
+            resValue("string", "coconame", "coco")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
+        }
+        getByName("debug") {
+            resValue("string", "coconame", "[DBUG] coco")
+
+            isDebuggable = true
+            buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
         }
     }
     compileOptions {
@@ -42,6 +51,7 @@ android {
     // Enable view binding
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 

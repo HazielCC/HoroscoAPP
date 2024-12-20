@@ -1,5 +1,7 @@
 package com.example.horoscoapp.utilities.services
 
+import com.example.horoscoapp.BuildConfig.BASE_URL
+import com.example.horoscoapp.utilities.interceptors.AuthInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,26 +19,27 @@ object ApiModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(): Retrofit {
-        return buildRetrofit()
+    fun provideRetrofit(interceptor: OkHttpClient): Retrofit {
+        return Retrofit
+            .Builder()
+            .baseUrl(BASE_URL)
+            .client(interceptor)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
     }
 
-    private fun buildRetrofit(): Retrofit {
-        // Logging interceptor
+    @Singleton
+    @Provides
+    fun provideOkHttpClient(authInterceptor: AuthInterceptor): OkHttpClient {
         val logging = HttpLoggingInterceptor()
         logging.setLevel(HttpLoggingInterceptor.Level.BODY)
 
-        val client = OkHttpClient.Builder()
+        return OkHttpClient.Builder()
             .addInterceptor(logging)
+            .addInterceptor(authInterceptor)
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
-            .build()
-
-        return Retrofit.Builder()
-            .baseUrl("https://qapi.vercel.app/api/")
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
 }

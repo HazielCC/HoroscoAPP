@@ -24,7 +24,6 @@
     <style name="MyTitleTextView">
         <item name="android:textSize">30sp</item>
         <item name="android:textColor">@color/secondary</item>
-        <item name="android:layout_margin">16dp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">@font/dancing</item>
     </style>

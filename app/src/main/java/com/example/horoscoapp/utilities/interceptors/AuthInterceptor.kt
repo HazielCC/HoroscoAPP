@@ -2,9 +2,20 @@ package com.example.horoscoapp.utilities.interceptors
 
 import okhttp3.Interceptor
 import okhttp3.Response
+import javax.inject.Inject
 
-class AuthIterceptor : Interceptor {
+class AuthInterceptor @Inject constructor(private val tokenManager: TokenManager) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
-        TODO("Not yet implemented")
+        val request = chain.request()
+            .newBuilder()
+            .header("Authorization", tokenManager.getToken())
+            .build()
+        return chain.proceed(request)
+    }
+}
+
+class TokenManager @Inject constructor() {
+    fun getToken(): String {
+        return "Soy un token"
     }
 }
