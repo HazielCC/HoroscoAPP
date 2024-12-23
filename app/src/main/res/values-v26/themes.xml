@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <style name="MyBodyTextView">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/colorOnPrimary</item>
-        <item name="android:paddingVertical">2.5dp</item>
-    </style>
-</resources>

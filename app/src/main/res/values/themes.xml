@@ -29,15 +29,10 @@
     </style>
 
     <style name="MyBodyTextView">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/colorOnPrimary</item>
         <item name="android:paddingVertical">2.5dp</item>
-    </style>
-
-    <!--  -->
-    <style name="MyTextViewBody" parent="MyTitleTextView">
-        <item name="android:textSize">24sp</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/dancing</item>
     </style>
 
     <style name="MyCardsViews">

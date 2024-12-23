@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="NullableNotNullManager">
@@ -26,7 +27,7 @@
     </option>
     <option name="myNotNulls">
       <value>
-        <list size="14">
+        <list size="15">
           <item index="0" class="java.lang.String" itemvalue="androidx.annotation.RecentlyNonNull" />
           <item index="1" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.NonNull" />
           <item index="2" class="java.lang.String" itemvalue="org.jspecify.annotations.NonNull" />
@@ -41,6 +42,7 @@
           <item index="11" class="java.lang.String" itemvalue="javax.annotation.Nonnull" />
           <item index="12" class="java.lang.String" itemvalue="org.eclipse.jdt.annotation.NonNull" />
           <item index="13" class="java.lang.String" itemvalue="android.annotation.NonNull" />
+          <item index="14" class="java.lang.String" itemvalue="lombok.NonNull" />
         </list>
       </value>
     </option>
@@ -50,5 +52,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.20636010645946212" />
+      </ProjectState>
+    </option>
   </component>
 </project>
