@@ -86,3 +86,4 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+/app/release/baselineProfiles/1/app-release.dm
