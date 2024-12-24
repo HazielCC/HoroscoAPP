@@ -1,9 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.safeargs.android)
     id("kotlin-kapt") // Kotlin annotation processing
-    id("com.google.dagger.hilt.android") // DaggerHilt
-    id("androidx.navigation.safeargs.kotlin") // Navigation Safe Args
 }
 
 android {
@@ -14,8 +14,8 @@ android {
         applicationId = "com.example.horoscoapp"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -32,7 +32,7 @@ android {
             buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
         }
         getByName("debug") {
-            resValue("string", "coconame", "[DBUG] coco")
+            resValue("string", "coconame", "[DEBUG] coco")
 
             isDebuggable = true
             buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
