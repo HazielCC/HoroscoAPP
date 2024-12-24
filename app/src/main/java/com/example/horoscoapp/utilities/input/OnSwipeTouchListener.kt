@@ -7,7 +7,7 @@ import android.view.View
 import kotlin.math.abs
 
 // NO NECESITAS ENTENDER ESTO SOLO USALO
-
+// Esta clase gestiona los gestos de deslizamiento en una vista.
 open class OnSwipeTouchListener(context: Context) : View.OnTouchListener {
 
     companion object {
@@ -22,7 +22,11 @@ open class OnSwipeTouchListener(context: Context) : View.OnTouchListener {
     }
 
     override fun onTouch(v: View, event: MotionEvent): Boolean {
-        return gestureDetector.onTouchEvent(event)
+        val result = gestureDetector.onTouchEvent(event)
+        if (event.action == MotionEvent.ACTION_UP && !result) {
+            v.performClick()
+        }
+        return result
     }
 
     private inner class GestureListener : GestureDetector.SimpleOnGestureListener() {
@@ -59,15 +63,12 @@ open class OnSwipeTouchListener(context: Context) : View.OnTouchListener {
                         result = true
                     }
                 }
-
             } catch (exception: Exception) {
                 exception.printStackTrace()
             }
 
             return result
         }
-
-
     }
 
     open fun onSwipeRight() = Unit

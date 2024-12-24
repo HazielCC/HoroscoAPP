@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background"
-    android:padding="8dp"
     tools:context=".ui.luck.LuckFragment">
 
 
@@ -13,8 +12,6 @@
         android:id="@+id/preview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        tools:visibility="gone"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,6 +50,9 @@
         android:id="@+id/prediction"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="8dp"
+
+        android:visibility="invisible"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
