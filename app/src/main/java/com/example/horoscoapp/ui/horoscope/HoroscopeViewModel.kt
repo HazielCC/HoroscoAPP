@@ -9,7 +9,9 @@ import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class HoroscopeViewModel @Inject constructor(val horoscopeProvider: HoroscopeProvider) :
+class HoroscopeViewModel @Inject constructor(
+    horoscopeProvider: HoroscopeProvider
+) :
     ViewModel() {
     // MutableStateFlow is a state-holder observable flow that emits the current and new state
     private var _horoscope = MutableStateFlow<List<HoroscopeInfo>>(emptyList())
