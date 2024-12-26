@@ -12,9 +12,13 @@ class PermissionsService @Inject constructor(
 
     private val tag = "PermissionsService"
 
+    companion object {
+        const val CAMERA_PERMISSION = android.Manifest.permission.CAMERA
+    }
+
     fun checkCameraPermission(): Boolean {
         val permissionGranted = PermissionChecker.checkSelfPermission(
-            context, android.Manifest.permission.CAMERA
+            context, CAMERA_PERMISSION
         ) == PermissionChecker.PERMISSION_GRANTED
 
         if (permissionGranted) {

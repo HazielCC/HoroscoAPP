@@ -22,34 +22,6 @@
     <string name="aquarius">Aquarius</string>
     <string name="pisces">Pisces</string>
 
-
-    <!-- ****************** Utilities ****************** -->
-    <string name="titulo">Titulo</string>
-    <string name="advertencia">Advertencia</string>
-    <string name="exito">Éxito</string>
-    <string name="informacion">Información</string>
-    <string name="error_servicio">Error en el servicio</string>
-
-    <!-- Mensaje emergente -->
-    <string name="error_internet">No tienes conexión a Internet</string>
-
-    <!-- Botones -->
-    <string name="reintentar">Reintentar</string>
-    <string name="volver">Volver</string>
-    <string name="error">error</string>
-
-    <!-- ALTS  -->
-    <string name="icon_toastmessage">Icon Toast Message</string>
-
-    <!-- Permisos -->
-    <string name="permiso_camara_si">El permiso de la cámara ha sido otorgado.</string>
-    <string name="permiso_camara_no">El permiso de la cámara NO ha sido otorgado.</string>
-
-    <!-- Ejemplos de Textos -->
-    <string name="example">I am an example</string>
-    <string name="long_example">I am a longest example, i try to make the difference in the world</string>
-    <string name="short_example">I am a short example</string>
-
     <!--  ****************** Luck ******************  -->
     <string name="share">Share</string>
     <string name="luck_0">"A new opportunity will bring unexpected success your way."</string>
@@ -85,5 +57,33 @@
     <string name="luck_30">"Unexpected travel plans will broaden your horizons."</string>
     <string name="luck_31">"A surprising twist of fate will bring unexpected blessings."</string>
 
+    <!-- ****************** Utilities ****************** -->
+    <string name="titulo">Titulo</string>
+    <string name="advertencia">Advertencia</string>
+    <string name="exito">Éxito</string>
+    <string name="informacion">Información</string>
+    <string name="error_servicio">Error en el servicio</string>
 
+    <!-- Mensaje emergente -->
+    <string name="error_internet">No tienes conexión a Internet</string>
+
+    <!-- Botones -->
+    <string name="reintentar">Reintentar</string>
+    <string name="continuar">Continuar</string>
+    <string name="volver">Volver</string>
+    <string name="error">error</string>
+
+    <!-- ALTS  -->
+    <string name="icon_toastmessage">Icon Toast Message</string>
+
+    <!-- Permisos -->
+
+    <string name="permiso_camara">Es necesario otorgar el permiso de la cámara.</string>
+    <string name="permiso_camara_si">El permiso de la cámara ha sido otorgado.</string>
+    <string name="permiso_camara_no">El permiso de la cámara NO ha sido otorgado.</string>
+
+    <!-- Ejemplos de Textos -->
+    <string name="example">I am an example</string>
+    <string name="long_example">I am a longest example, i try to make the difference in the world</string>
+    <string name="short_example">I am a short example</string>
 </resources>
