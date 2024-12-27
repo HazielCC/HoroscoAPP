@@ -14,10 +14,11 @@ android {
         applicationId = "com.example.horoscoapp"
         minSdk = 26
         targetSdk = 34
-        versionCode = 2
-        versionName = "1.1"
+        versionCode = 3
+        versionName = "1.2"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        // testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.example.horoscoapp.CustomTestRunner"
     }
 
     buildTypes {
@@ -94,9 +95,9 @@ dependencies {
     //UITesting
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    /*androidTestImplementation("androidx.test.espresso:espresso-contrib:3.6.1")
-    androidTestImplementation("androidx.test.espresso:espresso-intents:3.6.1")
-    androidTestImplementation("com.google.dagger:hilt-android-testing:2.48")
-    androidTestImplementation("androidx.fragment:fragment-testing:1.8.5")
-    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.54") */
+    androidTestImplementation(libs.androidx.espresso.contrib)
+    androidTestImplementation(libs.androidx.espresso.intents)
+    androidTestImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.androidx.fragment.testing)
+    kaptAndroidTest(libs.hilt.android.compiler)
 }
