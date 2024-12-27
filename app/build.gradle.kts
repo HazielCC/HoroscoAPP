@@ -14,8 +14,8 @@ android {
         applicationId = "com.example.horoscoapp"
         minSdk = 26
         targetSdk = 34
-        versionCode = 3
-        versionName = "1.2"
+        versionCode = 4
+        versionName = "1.3"
 
         // testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunner = "com.example.horoscoapp.CustomTestRunner"
@@ -25,7 +25,7 @@ android {
         getByName("release") {
             isDebuggable = false
             isMinifyEnabled = false
-            resValue("string", "coconame", "coco")
+            resValue("string", "coconame", "Horosco APP")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -33,7 +33,7 @@ android {
             buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
         }
         getByName("debug") {
-            resValue("string", "coconame", "[DEBUG] coco")
+            resValue("string", "coconame", "[DEBUG] Horosco APP")
 
             isDebuggable = true
             buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
