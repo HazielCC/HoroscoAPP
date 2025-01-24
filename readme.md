@@ -1,1 +1,1 @@
-# Proyecto de escuela para la materia de programación
+Proyecto para Horoscopos Kotlin
