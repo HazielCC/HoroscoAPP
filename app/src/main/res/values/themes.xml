@@ -1,47 +1,10 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.HoroscoAPP" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.HoroscoAPP" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
 
     <style name="Theme.HoroscoAPP" parent="Base.Theme.HoroscoAPP" />
-
-
-    <!-- Estilo de Botón de Google -->
-    <style name="MyButtonStyle">
-        <item name="android:maxHeight">100dp</item>
-        <item name="android:maxWidth">100dp</item>
-
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="cornerRadius">10dp</item>
-        <item name="android:padding">10dp</item>
-    </style>
-
-    <!-- Style for Text -->
-    <style name="MyTitleTextView">
-        <item name="android:textSize">30sp</item>
-        <item name="android:textColor">@color/secondary</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:fontFamily">@font/dancing</item>
-    </style>
-
-    <style name="MyBodyTextView">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/colorOnPrimary</item>
-        <item name="android:paddingVertical">2.5dp</item>
-    </style>
-
-    <!--  -->
-    <style name="MyTextViewBody" parent="MyTitleTextView">
-        <item name="android:textSize">24sp</item>
-        <item name="android:textStyle">normal</item>
-    </style>
-
-    <style name="MyCardsViews">
-        <item name="cardCornerRadius">12dp</item>
-        <item name="cardElevation">3dp</item>
-    </style>
 </resources>

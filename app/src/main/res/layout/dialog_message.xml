@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
-        android:background="@color/colorPrimaryVariant"
+        android:background="@color/backgroundNavbar"
         android:orientation="vertical">
 
         <ImageView
@@ -34,43 +34,50 @@
                 android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:gravity="center"
-                style="@style/MyTitleTextView"
+                android:textSize="16sp"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                android:paddingVertical="2.5dp"
+
                 tools:text="@string/titulo" />
 
             <TextView
                 android:id="@+id/tvText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:gravity="center"
-                style="@style/MyBodyTextView"
+                android:textSize="14sp"
+                android:textColor="@color/text_color"
+                android:paddingVertical="2.5dp"
+
                 tools:text="Cuerpo como ejemplo" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="8dp"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnClose"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 tools:text="@string/volver"
                 android:layout_marginEnd="10dp"
-                style="@style/MyButtonStyle"
-                tools:backgroundTint="@color/blue" />
+                style="@style/backAndCloseButton" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAction"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
-                tools:text="Aceptar"
+                android:layout_height="match_parent"
                 style="@style/MyButtonStyle"
-                tools:backgroundTint="@color/green" />
-
+                tools:text="Aceptar" />
         </LinearLayout>
 
     </LinearLayout>

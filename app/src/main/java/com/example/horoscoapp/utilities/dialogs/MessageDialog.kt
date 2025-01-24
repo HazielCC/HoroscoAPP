@@ -2,18 +2,21 @@ package com.example.horoscoapp.utilities.dialogs
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
+import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import com.example.horoscoapp.R
 import com.example.horoscoapp.databinding.DialogMessageBinding
 import com.example.horoscoapp.utilities.services.NetworkIdentity
 import javax.inject.Inject
 
 class MessageDialog @Inject constructor(
-    private var dialog: AlertDialog,
     private var networkIdentity: NetworkIdentity
 ) {
     private lateinit var binding: DialogMessageBinding
+    private var dialog: AlertDialog? = null
 
     companion object {
         const val TYPE_ERROR = "error"
@@ -23,26 +26,33 @@ class MessageDialog @Inject constructor(
         const val TYPE_ERROR_INTERNET = "error_internet"
     }
 
+    enum class MessageType {
+        ERROR,
+        SUCCESS,
+        WARNING,
+        INFO
+    }
+
     private fun show(context: Context, message: String, type: String) {
-        if (dialog.isShowing) return
+        dialog?.let { if (it.isShowing) return }
 
         val builder = AlertDialog.Builder(context)
         val inflater = LayoutInflater.from(context)
         binding = DialogMessageBinding.inflate(inflater)
         builder.setView(binding.root)
         dialog = builder.create()
-        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
-        dialog.show()
+        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog?.show()
 
         binding.tvText.text = message
         configureDialog(context, type)
-        binding.btnClose.setOnClickListener { dialog.dismiss() }
+        binding.btnClose.setOnClickListener { dialog?.dismiss() }
     }
 
     private fun configureDialog(context: Context, type: String) {
         when (type) {
             TYPE_ERROR -> {
-                dialog.setCancelable(false)
+                dialog?.setCancelable(false)
                 binding.tvTitle.text = context.getString(R.string.error)
                 binding.tvTitle.setTextColor(context.getColor(R.color.red))
                 binding.ivIcon.setImageResource(R.drawable.ic_error)
@@ -61,13 +71,26 @@ class MessageDialog @Inject constructor(
             }
 
             TYPE_WARNING -> {
-                binding.tvTitle.text = context.getString(R.string.advertencia)
-                binding.tvTitle.setTextColor(context.getColor(R.color.yellow))
                 binding.ivIcon.setImageResource(R.drawable.ic_warning)
+                binding.tvTitle.text = context.getString(R.string.advertencia)
+
+                // Style button
+                binding.btnAction.text = context.getString(R.string.continuar)
+                binding.btnAction.strokeColor =
+                    ColorStateList.valueOf(ContextCompat.getColor(context, R.color.yellow))
+                binding.btnAction.strokeWidth = 2
+                binding.btnAction.backgroundTintList = ColorStateList.valueOf(
+                    ContextCompat.getColor(
+                        context, android.R.color.transparent
+                    )
+                )
+                binding.btnAction.setTextColor(ContextCompat.getColor(context, R.color.yellow))
+
+                binding.btnClose.isVisible = false
             }
 
             TYPE_ERROR_INTERNET -> {
-                dialog.setCancelable(false)
+                dialog?.setCancelable(false)
                 binding.tvTitle.text = context.getString(R.string.error_servicio)
                 binding.tvTitle.setTextColor(context.getColor(R.color.red))
                 binding.ivIcon.setImageResource(R.drawable.ic_error)
@@ -75,9 +98,9 @@ class MessageDialog @Inject constructor(
                 binding.btnAction.text = context.getString(R.string.reintentar)
                 binding.btnAction.setOnClickListener {
                     if (networkIdentity.isNetworkAvailable()) {
-                        dialog.dismiss()
+                        dialog?.dismiss()
                     } else {
-                        dialog.dismiss()
+                        dialog?.dismiss()
                         show(
                             context,
                             context.getString(R.string.error_internet),
@@ -109,31 +132,33 @@ class MessageDialog @Inject constructor(
         context: Context,
         title: String,
         message: String,
-        type: Int = 1,
+        type: MessageType = MessageType.ERROR,
         twoButtons: Boolean = false,
-        textBtnClose: String? = null,
+        textBtnClose: String? = context.getString(R.string.volver),
+        textActionClose: String? = context.getString(R.string.continuar),
         action: () -> Unit
     ) {
         val typeString = when (type) {
-            1 -> TYPE_ERROR
-            2 -> TYPE_SUCCESS
-            3 -> TYPE_WARNING
-            4 -> TYPE_INFO
-            else -> TYPE_INFO
+            MessageType.ERROR -> TYPE_ERROR
+            MessageType.SUCCESS -> TYPE_SUCCESS
+            MessageType.WARNING -> TYPE_WARNING
+            MessageType.INFO -> TYPE_INFO
         }
+
         show(context, message, typeString)
         binding.tvTitle.text = title
+        binding.btnAction.text = textActionClose
 
         if (twoButtons) {
             binding.btnClose.visibility = View.VISIBLE
-            binding.btnClose.text = textBtnClose ?: context.getString(R.string.volver)
+            binding.btnClose.text = textBtnClose
         } else {
             binding.btnClose.visibility = View.GONE
         }
 
         binding.btnAction.setOnClickListener {
+            dialog?.dismiss()
             action()
-            dialog.dismiss()
         }
     }
 

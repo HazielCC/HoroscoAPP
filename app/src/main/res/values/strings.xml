@@ -3,12 +3,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-
     <!-- Button Bar -->
     <string name="horoscope">Horoscope</string>
     <string name="luck">Luck</string>
     <string name="pailmistry">Pailmistry</string>
-
 
     <!-- Horoscope -->
     <string name="aries">Aries</string>
@@ -24,11 +22,40 @@
     <string name="aquarius">Aquarius</string>
     <string name="pisces">Pisces</string>
 
-    <!-- Ejemplos de Textos -->
-    <string name="example">I am an example</string>
-    <string name="long_example">I am a longest example, i try to make the difference in the world</string>
-    <string name="short_example">I am a short example</string>
-
+    <!--  ****************** Luck ******************  -->
+    <string name="share">Share</string>
+    <string name="luck_0">"A new opportunity will bring unexpected success your way."</string>
+    <string name="luck_1">"You'll meet someone who will change your life for the better."</string>
+    <string name="luck_2">"An exciting journey awaits you in the near future."</string>
+    <string name="luck_3">"A creative project will lead to recognition and fulfillment."</string>
+    <string name="luck_4">"You'll overcome a significant challenge and emerge stronger."</string>
+    <string name="luck_5">"Financial abundance is on the horizon; stay patient."</string>
+    <string name="luck_6">"A long-lost friend will reconnect with you soon."</string>
+    <string name="luck_7">"A big decision will lead to personal growth and happiness."</string>
+    <string name="luck_8">"A dream you've had for years will finally come true."</string>
+    <string name="luck_9">"Trust your intuition; it will guide you toward success."</string>
+    <string name="luck_10">"A hidden talent will emerge, bringing new opportunities."</string>
+    <string name="luck_11">"A change in your routine will lead to unexpected adventures."</string>
+    <string name="luck_12">"Someone from your past will play a significant role in your future."</string>
+    <string name="luck_13">"A serendipitous encounter will lead to a deep and lasting connection."</string>
+    <string name="luck_14">"You'll receive a surprising gift that brings joy to your life."</string>
+    <string name="luck_15">"An unexpected journey will lead to personal transformation."</string>
+    <string name="luck_16">"Your hard work will pay off with a well-deserved reward."</string>
+    <string name="luck_17">"A new chapter in your life will begin, filled with possibilities."</string>
+    <string name="luck_18">"Trust in the timing of events; everything happens for a reason."</string>
+    <string name="luck_19">"Embrace the change coming your way; it will lead to great things."</string>
+    <string name="luck_20">"A stroke of luck will lead you toward a path of prosperity."</string>
+    <string name="luck_21">"A unexpected opportunity will knock on your door; be ready to seize it."</string>
+    <string name="luck_22">"A period of personal growth and self-discovery is on the horizon."</string>
+    <string name="luck_23">"You'll find inspiration in the most unlikely of places."</string>
+    <string name="luck_24">"A new friendship will bring laughter and joy into your life."</string>
+    <string name="luck_25">"Recuerda siempre ser agradecido"</string>
+    <string name="luck_26">"An important decision will lead to a brighter future."</string>
+    <string name="luck_27">"A long-held wish will finally manifest itself."</string>
+    <string name="luck_28">"You'll discover a new passion that ignites your soul."</string>
+    <string name="luck_29">"A challenge you face now will become a stepping stone to success."</string>
+    <string name="luck_30">"Unexpected travel plans will broaden your horizons."</string>
+    <string name="luck_31">"A surprising twist of fate will bring unexpected blessings."</string>
 
     <!-- ****************** Utilities ****************** -->
     <string name="titulo">Titulo</string>
@@ -36,31 +63,27 @@
     <string name="exito">Éxito</string>
     <string name="informacion">Información</string>
     <string name="error_servicio">Error en el servicio</string>
-    <string name="parece_que_no_tienes_internet">Parece que no tienes Internet</string>
-
 
     <!-- Mensaje emergente -->
     <string name="error_internet">No tienes conexión a Internet</string>
 
     <!-- Botones -->
     <string name="reintentar">Reintentar</string>
-    <string name="cerrar">Cerrar</string>
-    <string name="aceptar">Aceptar</string>
-    <string name="cancelar">Cancelar</string>
-    <string name="volver">Volver</string>
     <string name="continuar">Continuar</string>
+    <string name="volver">Volver</string>
     <string name="error">error</string>
 
     <!-- ALTS  -->
     <string name="icon_toastmessage">Icon Toast Message</string>
 
-    <string name="valor_de_lista">Valor de Lista</string>
-    <string name="bot_n">Botón</string>
-    <string name="ingresa_tu_nombre">ingresa_tu_nombre</string>
-    <string name="masculino">Masculino</string>
-    <string name="femenino">Femenino</string>
-    <string name="calcular_masa_corporal">Calcular Masa Corporal</string>
-    <string name="resultado">Resultado</string>
-    <string name="volver_a_calcular">Volver a Calcular</string>
-    <string name="save">Guardar</string>
+    <!-- Permisos -->
+
+    <string name="permiso_camara">Es necesario otorgar el permiso de la cámara.</string>
+    <string name="permiso_camara_si">El permiso de la cámara ha sido otorgado.</string>
+    <string name="permiso_camara_no">El permiso de la cámara NO ha sido otorgado.</string>
+
+    <!-- Ejemplos de Textos -->
+    <string name="example">I am an example</string>
+    <string name="long_example">I am a longest example, i try to make the difference in the world</string>
+    <string name="short_example">I am a short example</string>
 </resources>

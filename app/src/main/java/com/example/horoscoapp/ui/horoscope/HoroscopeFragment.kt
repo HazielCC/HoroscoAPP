@@ -45,7 +45,6 @@ class HoroscopeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Infla el diseño para este fragmento
         _binding = FragmentHoroscopeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -53,12 +52,11 @@ class HoroscopeFragment : Fragment() {
     // Metodo llamado cuando la vista ha sido creada
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initUI() // Inicializa la interfaz de usuario
+        initUI()
     }
 
-    // Inicializa la interfaz de usuario
     private fun initUI() {
-        initUIState() // Inicializa el estado de la interfaz de usuario
+        initUIState()
         initRecycleView()
     }
 
@@ -66,7 +64,6 @@ class HoroscopeFragment : Fragment() {
     private fun initUIState() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                // Recoge los datos del ViewModel y los registra en el log
                 horoscopeViewModel.horoscope.collect {
                     horoscopeAdapter.updateList(it)
                 }
@@ -100,7 +97,6 @@ class HoroscopeFragment : Fragment() {
 
         // Establece el adaptador de la lista
         binding.rvHoroscope.apply {
-            // layoutManager = LinearLayoutManager(context) // Establece el diseño de la lista
             layoutManager = GridLayoutManager(context, 2)
             adapter = horoscopeAdapter
         }
